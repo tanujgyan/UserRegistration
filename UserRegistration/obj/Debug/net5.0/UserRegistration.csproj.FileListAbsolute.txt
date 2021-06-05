@@ -434,5 +434,4 @@ C:\Users\tgyan01d\source\repos\UserRegistration\UserRegistration\obj\Debug\net5.
 C:\Users\tgyan01d\source\repos\UserRegistration\UserRegistration\obj\Debug\net5.0\Razor\Views\Login\UserLogin.cshtml.g.cs
 C:\Users\tgyan01d\source\repos\UserRegistration\UserRegistration\obj\Debug\net5.0\Razor\Views\Home\GetUsers.cshtml.g.cs
 C:\Users\tgyan01d\source\repos\UserRegistration\UserRegistration\obj\Debug\net5.0\Razor\Views\Home\GetCurrentUser.cshtml.g.cs
-C:\Users\tgyan01d\source\repos\UserRegistration\UserRegistration\obj\Debug\net5.0\Razor\Views\Login\UserLoginError.cshtml.g.cs
 C:\Users\tgyan01d\source\repos\UserRegistration\UserRegistration\bin\Debug\net5.0\BCrypt.Net-Next.dll
