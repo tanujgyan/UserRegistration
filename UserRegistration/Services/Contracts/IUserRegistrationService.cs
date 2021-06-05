@@ -9,7 +9,7 @@ namespace UserRegistration.Services.Contracts
     public interface IUserRegistrationService
     {
         public IEnumerable<UserDetails> GetUsers();
-        public void AddNewUser(UserDetails user);
+        public string AddNewUser(UserDetails user);
         public UserDetails GetCurrentUser(string userName);
     }
 }

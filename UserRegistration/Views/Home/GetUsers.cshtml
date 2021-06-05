@@ -11,9 +11,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.UserName)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Password)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
@@ -26,6 +24,27 @@
             <th>
                 @Html.DisplayNameFor(model => model.Role)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserAddress.StreetNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserAddress.StreetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserAddress.Suite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserAddress.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserAddress.Province)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserAddress.PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserAddress.Country)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,9 +54,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
@@ -49,6 +66,27 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserAddress.StreetNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserAddress.StreetName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserAddress.Suite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserAddress.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserAddress.Province)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserAddress.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserAddress.Country)
             </td>
         </tr>
 }

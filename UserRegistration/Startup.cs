@@ -51,7 +51,6 @@ namespace UserRegistration
             services.AddScoped<IUserRegistrationService, UserRegistrationService>();
             services.AddScoped<IUserRegistrationRepository, UserRegistrationRepository>();
             services.AddScoped<IAuthorizationHandler, RolesAuthorizationHandler>();
-            services.AddScoped<IPasswordEncryption, PasswordEncryption>();
             services.AddControllersWithViews();
         }
 

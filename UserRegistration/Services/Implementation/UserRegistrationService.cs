@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UserRegistration.Models;
 using UserRegistration.Repository.Contracts;
@@ -11,18 +12,34 @@ namespace UserRegistration.Services.Implementation
     public class UserRegistrationService : IUserRegistrationService
     {
         private readonly IUserRegistrationRepository _userRegistrationRepository;
-        private readonly IPasswordEncryption _passwordEncryption;
+        
 
-        public UserRegistrationService(IUserRegistrationRepository userRegistrationRepository, IPasswordEncryption passwordEncryption)
+        public UserRegistrationService(IUserRegistrationRepository userRegistrationRepository)
         {
             _userRegistrationRepository = userRegistrationRepository;
-            _passwordEncryption = passwordEncryption;
         }
 
-        public void AddNewUser(UserDetails user)
+        public string AddNewUser(UserDetails user)
         {
-            user.Password = _passwordEncryption.HashPassword(user.Password);
-            _userRegistrationRepository.AddNewUser(user);
+           
+            var u = _userRegistrationRepository.GetCurrentUser(user.UserName);
+            Regex regex = new Regex(@"[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]");
+            Match match = regex.Match(user.UserAddress.PostalCode);
+            if(!match.Success)
+            {
+                return "Invalid Postal Code";
+            }
+            if (u == null)
+            {
+                user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                _userRegistrationRepository.AddNewUser(user);
+                return "User Created";
+            }
+            else
+            {
+                return "Username already exists";
+            }
+            
         }
 
         public IEnumerable<UserDetails> GetUsers()

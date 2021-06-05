@@ -12,6 +12,7 @@ namespace UserRegistration.Models
         {
 
         }
+       
         public DbSet<UserDetails> UserDetails { get; set; }
         public DbSet<UserDetails> UserAddress { get; set; }
     }

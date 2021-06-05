@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Uava5HZtrNKuP+/sTkNC+UKnAzgtnqltORy5BqMxo7kyPRCsywoxnfybzvQPza6TR1uOqPRgkAPz0Jc6Y7sn9A==",
+  "dgSpecHash": "Dw00vQP22O2H5qcgrxIWXu+UMMdBCV1XcVRtZ9q/QpFl8BVNHnH0PIzbDJzUW6CTVonW3RofUJgMXs7tqglIVw==",
   "success": true,
   "projectFilePath": "C:\\Users\\tgyan01d\\source\\repos\\UserRegistration\\UserRegistration\\UserRegistration.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tgyan01d\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\tgyan01d\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\tgyan01d\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\tgyan01d\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.6\\microsoft.aspnetcore.mvc.razor.extensions.5.0.6.nupkg.sha512",

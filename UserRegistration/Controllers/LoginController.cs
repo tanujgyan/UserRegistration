@@ -14,12 +14,11 @@ namespace CookieAuthDemoProject.Controllers
     public class LoginController : Controller
     {
         private readonly IUserRegistrationService _userRegistrationService;
-        private readonly IPasswordEncryption _passwordEncryption;
+       
 
-        public LoginController(IUserRegistrationService userRegistrationService,IPasswordEncryption passwordEncryption)
+        public LoginController(IUserRegistrationService userRegistrationService)
         {
             _userRegistrationService = userRegistrationService;
-           _passwordEncryption = passwordEncryption;
         }
         [HttpGet]
         public IActionResult UserLogin()
@@ -32,10 +31,12 @@ namespace CookieAuthDemoProject.Controllers
             var userDetails = _userRegistrationService.GetUsers().FirstOrDefault(u => u.UserName == user.UserName);
             if(userDetails!=null)
             {
-                var hashedPassword = _passwordEncryption.HashPassword(user.Password);
-                if(!userDetails.Password.Equals(hashedPassword))
+               
+                var isPasswordMatching = BCrypt.Net.BCrypt.Verify(user.Password, userDetails.Password);
+               
+                if(!isPasswordMatching)
                 {
-                    return Redirect("\\Login\\UserLoginError");
+                    return NotFound("User Name or password is invalid. Please click back and try again");
                 }
             }
             if (userDetails != null)

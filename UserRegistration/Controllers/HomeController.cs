@@ -56,9 +56,10 @@ namespace UserRegistration.Controllers
             return View(users);
         }
         [HttpPost]
-        public  void AddUserDetails(UserDetails user)
+        public  ActionResult AddUserDetails(UserDetails user)
         {
-            _userRegistrationService.AddNewUser(user);
+            var result = _userRegistrationService.AddNewUser(user);
+            return Content(result);
         }
         [HttpGet]
         public ActionResult AddUserDetails()
